@@ -19,6 +19,22 @@
 	<h:outputLabel value="Nome: #{alfredoController.nome}" />
 	<br/>
 	<h:outputLabel value="Idade: #{alfredoController.idade}" />
+	<br/>
+	<br/>
+	<h:commandButton id="btnSoma" value="Somar" 
+	action="#{exerciciosController.exibirSoma}"/>
+	<h:commandButton id="btnSubtrair" value="Subtrair" 
+	action="#{exerciciosController.exibirSubtracao}"/>
+	<h:commandButton id="btnMultiplicar" value="Multiplicar" 
+	action="#{exerciciosController.exibirMultiplicacao}"/>
+	<h:commandButton id="btnDividir" value="Dividir" 
+	action="#{exerciciosController.exibirDivisao}"/>
+	<br/>
+	<h:inputText value="PrimeiroNumero: #{exerciciosController.primeiroNumero}"/>
+	<br/>
+	<h:inputText value="SegundoNumero: #{exerciciosController.segundoNumero}"/>
+	<br/>
+	<h:outputLabel value="Resposta: #{exerciciosController.resposta}"/>
 	</h:form>
 </h:body>
 </html>
