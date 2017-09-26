@@ -1,14 +1,48 @@
 package br.com.db1.controller;
 
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean
 public class ExerciciosController {
 
 	private Double primeiroNumero;
 	private Double segundoNumero;
 	private Double resposta;
-	
-	public ExerciciosController() { //set errado?????Resolver
-		setPrimeiroNumero(10d);
-		setSegundoNumero(20d);
+	private String palavra;
+	private String respostaText;
+	private String numero;
+	private Double respostaFormatado;
+
+	public Double getRespostaFormatado() {
+		return respostaFormatado;
+	}
+
+	public void setRespostaFormatado(Double respostaFormatado) {
+		this.respostaFormatado = respostaFormatado;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public String getRespostaText() {
+		return respostaText;
+	}
+
+	public void setRespostaText(String respostaText) {
+		this.respostaText = respostaText;
+	}
+
+	public String getPalavra() {
+		return palavra;
+	}
+
+	public void setPalavra(String palavra) {
+		this.palavra = palavra;
 	}
 
 	public Double getPrimeiroNumero() {
@@ -36,22 +70,36 @@ public class ExerciciosController {
 	}
 
 	public void exibirSoma() {
+		getPrimeiroNumero();
 		resposta = (primeiroNumero + segundoNumero);
 		setResposta(resposta);
 	}
-	
+
 	public void exibirSubtracao() {
 		resposta = (primeiroNumero - segundoNumero);
 		setResposta(resposta);
 	}
-	
+
 	public void exibirMultiplicacao() {
 		resposta = (primeiroNumero * segundoNumero);
 		setResposta(resposta);
 	}
-	
+
 	public void exibirDivisao() {
 		resposta = (primeiroNumero / segundoNumero);
 		setResposta(resposta);
+	}
+
+	public void exibirMaiscula() {
+		setRespostaText(palavra.toUpperCase());
+	}
+
+	public void exibirMinuscula() {
+		setRespostaText(palavra.toLowerCase());
+	}
+
+	public void exibirFormatado() {
+		resposta = Double.parseDouble(numero);
+		setRespostaFormatado(resposta);
 	}
 }

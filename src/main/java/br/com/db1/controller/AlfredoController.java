@@ -7,6 +7,15 @@ public class AlfredoController {
 
 	private String nome;
 	private Integer idade;
+	private UF uf = UF.RS;
+	
+	public UF[]getListaUf(){
+		return uf.values();
+	}
+
+	public UF getUf() {
+		return uf;
+	}
 
 	public String getNome() {
 		return nome;
